@@ -4,6 +4,7 @@
 """
 
 def mongo_iter(col, limit):
+    cursor_id = None
     while True:
         if cursor_id != None:
             cursor = col.find({'_id': {'$gt': cursor_id}}).limit(limit)
